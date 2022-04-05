@@ -19,72 +19,72 @@ new Vue({
         {
           name: "哑牛",
           artist: "蛙池",
-          cover: "https://raw.githubusercontent.com/lylelove/Course/main/music/img/1.jpg",
-          source: "https://raw.githubusercontent.com/lylelove/Course/main/music/mp3/1.mp3",
+          cover: "https://cdn.jsdelivr.net/gh/lylelove/Course/music/img/1.jpg",
+          source: "https://cdn.jsdelivr.net/gh/lylelove/Course/music/mp3/1.mp3",
           url: "https://www.youtube.com/watch?v=z3wAjJXbYzA",
           favorited: false
         },
         {
           name: "人间沼泽",
           artist: "暴躁的兔子",
-          cover: "https://raw.githubusercontent.com/lylelove/Course/main/music/img/2.jpg",
-          source: "https://raw.githubusercontent.com/lylelove/Course/main/music/mp3/2.mp3",
+          cover: "https://cdn.jsdelivr.net/gh/lylelove/Course/music/img/2.jpg",
+          source: "https://cdn.jsdelivr.net/gh/lylelove/Course/music/mp3/2.mp3",
           url: "https://www.youtube.com/watch?v=Lin-a2lTelg",
           favorited: true
         },
         {
           name: "童梦月光谣",
           artist: "陈鸿宇; 柳爽; 雨锟YainkuEEn; 梁琪; ",
-          cover: "https://raw.githubusercontent.com/lylelove/Course/main/music/img/3.jpg",
-          source: "https://raw.githubusercontent.com/lylelove/Course/main/music/mp3/3.mp3",
+          cover: "https://cdn.jsdelivr.net/gh/lylelove/Course/music/img/3.jpg",
+          source: "https://cdn.jsdelivr.net/gh/lylelove/Course/music/mp3/3.mp3",
           url: "https://www.youtube.com/watch?v=ICjyAe9S54c",
           favorited: false
         },
         {
           name: "请你吃个冰激凌",
           artist: "花粥",
-          cover: "https://raw.githubusercontent.com/lylelove/Course/main/music/img/4.jpg",
-          source: "https://raw.githubusercontent.com/lylelove/Course/main/music/mp3/4.mp3",
+          cover: "https://cdn.jsdelivr.net/gh/lylelove/Course/music/img/4.jpg",
+          source: "https://cdn.jsdelivr.net/gh/lylelove/Course/music/mp3/4.mp3",
           url: "https://www.youtube.com/watch?v=kYgGwWYOd9Y",
           favorited: false
         },
         {
           name: "罪",
           artist: "一支榴莲",
-          cover: "https://raw.githubusercontent.com/lylelove/Course/main/music/img/5.jpg",
-          source: "https://raw.githubusercontent.com/lylelove/Course/main/music/mp3/5.mp3",
+          cover: "https://cdn.jsdelivr.net/gh/lylelove/Course/music/img/5.jpg",
+          source: "https://cdn.jsdelivr.net/gh/lylelove/Course/music/mp3/5.mp3",
           url: "https://www.youtube.com/watch?v=0WlpALnQdN8",
           favorited: true
         },
         {
           name: "唯一",
           artist: "告五人",
-          cover: "https://raw.githubusercontent.com/lylelove/Course/main/music/img/6.jpg",
-          source: "https://raw.githubusercontent.com/lylelove/Course/main/music/mp3/6.mp3",
+          cover: "https://cdn.jsdelivr.net/gh/lylelove/Course/music/img/6.jpg",
+          source: "https://cdn.jsdelivr.net/gh/lylelove/Course/music/mp3/6.mp3",
           url: "https://www.youtube.com/watch?v=HhoATZ1Imtw",
           favorited: false
         },
         {
           name: "马",
           artist: "福禄寿",
-          cover: "https://raw.githubusercontent.com/lylelove/Course/main/music/img/7.jpg",
-          source: "https://raw.githubusercontent.com/lylelove/Course/main/music/mp3/7.mp3",
+          cover: "https://cdn.jsdelivr.net/gh/lylelove/Course/music/img/7.jpg",
+          source: "https://cdn.jsdelivr.net/gh/lylelove/Course/music/mp3/7.mp3",
           url: "https://www.youtube.com/watch?v=me6aoX0wCV8",
           favorited: true
         },
         {
           name: "荒岛",
           artist: "谢春花",
-          cover: "https://raw.githubusercontent.com/lylelove/Course/main/music/img/8.jpg",
-          source: "https://raw.githubusercontent.com/lylelove/Course/main/music/mp3/8.mp3",
+          cover: "https://cdn.jsdelivr.net/gh/lylelove/Course/music/img/8.jpg",
+          source: "https://cdn.jsdelivr.net/gh/lylelove/Course/music/mp3/8.mp3",
           url: "https://www.youtube.com/watch?v=00-Rl3Jlx-o",
           favorited: false
         },
         {
           name: "谜底",
           artist: "枯木逢春",
-          cover: "https://raw.githubusercontent.com/lylelove/Course/main/music/img/9.jpg",
-          source: "https://raw.githubusercontent.com/lylelove/Course/main/music/mp3/9.mp3",
+          cover: "https://cdn.jsdelivr.net/gh/lylelove/Course/music/img/9.jpg",
+          source: "https://cdn.jsdelivr.net/gh/lylelove/Course/music/mp3/9.mp3",
           url: "https://music.163.com/song?id=1834727583&userid=1301505331",
           favorited: false
         }
@@ -176,7 +176,7 @@ new Vue({
       this.audio.currentTime = 0;
       this.audio.src = this.currentTrack.source;
       setTimeout(() => {
-        if(this.isTimerPlaying) {
+        if (this.isTimerPlaying) {
           this.audio.play();
         } else {
           this.audio.pause();
@@ -194,13 +194,13 @@ new Vue({
     this.currentTrack = this.tracks[0];
     this.audio = new Audio();
     this.audio.src = this.currentTrack.source;
-    this.audio.ontimeupdate = function() {
+    this.audio.ontimeupdate = function () {
       vm.generateTime();
     };
-    this.audio.onloadedmetadata = function() {
+    this.audio.onloadedmetadata = function () {
       vm.generateTime();
     };
-    this.audio.onended = function() {
+    this.audio.onended = function () {
       vm.nextTrack();
       this.isTimerPlaying = true;
     };
